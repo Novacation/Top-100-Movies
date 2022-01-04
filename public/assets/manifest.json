@@ -1,4 +1,7 @@
 {
-  "assets/app.css": "http://localhost:63046/assets/app.css",
-  "assets/app.js": "http://localhost:63046/assets/app.js"
+  "assets/app.js": "/assets/app.289e67be.js",
+  "assets/tailwind.css": "/assets/tailwind.64109fac.css",
+  "assets/tailwind.js": "/assets/tailwind.31d6cfe0.js",
+  "assets/header.css": "/assets/header.9ae13d10.css",
+  "assets/header.js": "/assets/header.31d6cfe0.js"
 }

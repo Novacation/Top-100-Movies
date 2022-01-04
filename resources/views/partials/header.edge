@@ -1,0 +1,20 @@
+
+<header class="relative bg-slate-900 text-stone-200 font-extralight w-full">
+  <div
+    x-data="{ toggleSideBar: false }"
+    class="flex flex-row relative justify-between sm:justify-around max-w-screen-lg w-full mx-auto py-6 px-4"
+  >
+    <h1 class="text-3xl max-w-xs cursor-pointer logo">Top 100 Movies</h1>
+    <button
+      x-on:click="toggleSideBar = !toggleSideBar"
+      class="flex flex-col justify-evenly lg:hidden cursor-pointer"
+      type="button"
+    >
+      <span class="block w-8 h-0.5 bg-stone-200"></span>
+      <span class="block w-8 h-0.5 bg-stone-200"></span>
+      <span class="block w-8 h-0.5 bg-stone-200"></span>
+    </button>
+
+    @!component('components/sidebar')
+  </div>
+</header>

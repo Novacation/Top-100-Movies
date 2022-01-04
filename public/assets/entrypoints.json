@@ -1,11 +1,24 @@
 {
   "entrypoints": {
     "app": {
+      "js": [
+        "/assets/app.289e67be.js"
+      ]
+    },
+    "tailwind": {
       "css": [
-        "http://localhost:63046/assets/app.css"
+        "/assets/tailwind.64109fac.css"
       ],
       "js": [
-        "http://localhost:63046/assets/app.js"
+        "/assets/tailwind.31d6cfe0.js"
+      ]
+    },
+    "header": {
+      "css": [
+        "/assets/header.9ae13d10.css"
+      ],
+      "js": [
+        "/assets/header.31d6cfe0.js"
       ]
     }
   }

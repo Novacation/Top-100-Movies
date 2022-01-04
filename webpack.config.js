@@ -46,6 +46,8 @@ Encore.setPublicPath('/assets')
 |
 */
 Encore.addEntry('app', './resources/js/app.js')
+Encore.addEntry('tailwind', './resources/css/tailwind.css')
+Encore.addEntry('header', './resources/css/partials/header.css')
 
 /*
 |--------------------------------------------------------------------------

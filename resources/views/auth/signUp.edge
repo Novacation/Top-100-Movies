@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+
+    @entryPointStyles('tailwind')
+    @entryPointStyles('header')
+    @entryPointScripts('app')
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+</head>
+<body x-data="{signin: true, signup: false}">
+    @include('partials/header')
+
+    <h1 class="text-center mt-10 text-2xl">Sign up</h1>
+    <form
+      action="{{ route('signUp') }}"
+      method="POST"
+      class="flex flex-col max-w-screen-sm justify-between items-start mt-10 mx-auto border-2 p-10"
+    >
+      <input type="email" name="email" placeholder="E-mail" class="w-full" />
+      <input type="text" name="username" placeholder="Username" class="w-full" />
+      <input type="text" name="nickname" placeholder="Nickname" class="w-full" />
+      <input type="password" name="password" placeholder="Password" class="w-full" />
+      <button type="submit" class="bg-cyan-700 text-zinc-50 w-24 p-1 mt-5 mx-auto rounded-sm">
+        Sign up
+      </button>
+    </form>
+</body>
+</html>

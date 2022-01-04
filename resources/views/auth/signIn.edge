@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
+
+    @entryPointStyles('tailwind')
+    @entryPointStyles('header')
+    @entryPointScripts('app')
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+  </head>
+  <body x-data="{signin: false, signup: true}" class="bg-gray-200">
+    @include('partials/header')
+
+    <form
+      class="bg-white shadow-md rounded mt-12 px-8 pt-6 pb-8 w-11/12 max-w-md mx-auto mb-12 border-2 p-10"
+    >
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username"> Username </label>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        class="w-full shadow appearance-none border rounded leading-tight focus:outline-none focus:shadow-outline py-2 px-3 text-gray-700 mb-8"
+      />
+
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Password </label>
+      <input
+        type="password"
+        name="password"
+        placeholder="******************"
+        class="w-full shadow appearance-none border rounded leading-tight focus:outline-none focus:shadow-outline py-2 px-3 text-gray-700 mb-3"
+      />
+      <button type="submit" class="bg-green-700 text-zinc-50 w-24 p-1 mt-5 rounded-sm">
+        Sign in
+      </button>
+    </form>
+  </body>
+</html>

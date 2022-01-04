@@ -1,0 +1,38 @@
+<nav
+  x-bind:class="!toggleSideBar ? '-right-full' : 'right-0'"
+  class="flex flex-col bg-opacity-50 bg-stone-900 fixed top-0 w-full h-screen lg:hidden"
+>
+  <div
+    x-bind:class="!toggleSideBar ? '-right-full' : 'right-0'"
+    class="flex flex-col bg-gray-200 absolute top-0 w-full sm:w-5/12 h-screen lg:hidden duration-300 sm:duration-500"
+  >
+    <span
+      x-on:click="toggleSideBar = false"
+      class="absolute top-4 right-4 text-3xl cursor-pointer text-zinc-900"
+      >X</span
+    >
+    <ul class="flex flex-col items-center justify-evenly mt-16 h-4/6 text-zinc-900">
+      <li
+        x-show="signin"
+        class="flex flex-row justify-evenly w-4/12 sm:w-6/12 items-center cursor-pointer text-center text-2xl"
+      >
+        <span class="iconify w-8 h-8" data-icon="clarity:sign-in-line"></span>
+        <a href="{{ route('formSignIn') }}">Sign in</a>
+      </li>
+
+      <li
+        x-show="signup"
+        class="flex flex-row justify-evenly w-4/12 sm:w-6/12 items-center cursor-pointer text-center text-2xl"
+      >
+        <span class="iconify w-8 h-8" data-icon="akar-icons:person"></span>
+        <a href="{{ route('formSignUp') }}">Sign up</a>
+      </li>
+      <li
+        class="flex flex-row justify-evenly w-4/12 sm:w-6/12 items-center cursor-pointer text-center text-2xl"
+      >
+        <span class="iconify w-8 h-8" data-icon="akar-icons:github-fill"></span>
+        <a href="https://github.com/Novacation">Github</a>
+      </li>
+    </ul>
+  </div>
+</nav>
