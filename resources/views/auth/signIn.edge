@@ -9,30 +9,58 @@
     @entryPointStyles('tailwind')
     @entryPointStyles('header')
     @entryPointScripts('app')
+    @entryPointScripts('signin') 
+
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
   </head>
   <body x-data="{signin: false, signup: true}" class="bg-gray-200">
     @include('partials/header')
 
     <form
-      class="bg-white shadow-md rounded mt-12 px-8 pt-6 pb-8 w-11/12 max-w-md mx-auto mb-12 border-2 p-10"
+      id="signinForm"
+      action="{{ route('signIn') }}"
+      method="post"
+      class="relative bg-white shadow-md rounded mt-12 px-8 pt-6 pb-8 w-11/12 max-w-md mx-auto mb-12 border-2 p-10"
     >
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username"> Username </label>
       <input
+        id="username"
         type="text"
         name="username"
         placeholder="Username"
-        class="w-full shadow appearance-none border rounded leading-tight focus:outline-none focus:shadow-outline py-2 px-3 text-gray-700 mb-8"
+        class="w-full shadow appearance-none border rounded leading-tight focus:outline-none focus:shadow-outline py-2 px-3 text-gray-700 mb-1"
       />
 
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="password"> Password </label>
+      @if(flashMessages.has('errors.username'))
+        <p class="absolute text-rose-600 adonisError">{{ flashMessages.get('errors.username') }}</p>'
+      @end
+
+      <label class="block text-gray-700 text-sm font-bold mb-1 mt-8" for="password">
+        Password
+      </label>
       <input
+        id="password"
         type="password"
         name="password"
         placeholder="******************"
-        class="w-full shadow appearance-none border rounded leading-tight focus:outline-none focus:shadow-outline py-2 px-3 text-gray-700 mb-3"
+        class="w-full shadow appearance-none border rounded leading-tight focus:outline-none focus:shadow-outline py-2 px-3 text-gray-700 mb-1"
       />
-      <button type="submit" class="bg-green-700 text-zinc-50 w-24 p-1 mt-5 rounded-sm">
+
+      @if(flashMessages.has('errors.password'))
+        <p class="absolute text-rose-600 adonisError">{{ flashMessages.get('errors.password') }}</p>
+      @end
+
+      @if(flashMessages.has('invalidCredentials'))
+        <p class="absolute text-rose-600 adonisError">{{ flashMessages.get('invalidCredentials') }}</p>
+      @end
+        
+      
+
+      <button
+        type="submit"
+        id="sendBtn"
+        class="bg-green-700 text-zinc-50 w-24 p-1 mt-10 rounded-sm"
+      >
         Sign in
       </button>
     </form>

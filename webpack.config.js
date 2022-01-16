@@ -48,6 +48,8 @@ Encore.setPublicPath('/assets')
 Encore.addEntry('app', './resources/js/app.js')
 Encore.addEntry('tailwind', './resources/css/tailwind.css')
 Encore.addEntry('header', './resources/css/partials/header.css')
+Encore.addEntry('signin', './resources/js/signin/sendData.js')
+Encore.addEntry('signup', './resources/js/signup/sendData.js')
 
 /*
 |--------------------------------------------------------------------------
@@ -213,4 +215,15 @@ config.stats = 'errors-warnings'
 | Export config for webpack to do its job
 |
 */
+
+Encore.configureBabel(
+  (babelConfig) => {
+    babelConfig.plugins.push('styled-jsx/babel')
+    babelConfig.presets.push('@babel/preset-flow')
+  },
+  {
+    exclude: /node_modules/,
+  }
+)
+
 module.exports = config

@@ -4,20 +4,27 @@ import SignInUserValidator from 'App/Validators/SignInUserValidator'
 import SignUpUserValidator from 'App/Validators/SignUpUserValidator'
 
 export default class AuthenticationController {
-  public async signIn({ request, response, auth }: HttpContextContract) {
+  public async signIn({ request, response, auth, session }: HttpContextContract) {
     const signInValidator = new SignInUserValidator(request.ctx!)
     const payload = await request.validate({
       schema: signInValidator.schema,
       messages: signInValidator.messages,
     })
+    console.log(payload)
 
     try {
-      const user = await auth.use('api').verifyCredentials(payload.username, payload.password)
-      const token = await auth.use('api').generate(user)
+      const result = await auth.use('web').attempt(payload.username, payload.password)
 
-      return response.status(200).json({ token })
+      console.log('result')
+      console.log(result)
+
+      return response.redirect('/dashboard')
     } catch (error) {
-      return response.status(401).json({ error: 'Invalid credentials' })
+      console.log(error)
+
+      session.flash('invalidCredentials', 'Invalid credentials.')
+
+      return response.redirect().back()
     }
   }
 
@@ -30,11 +37,8 @@ export default class AuthenticationController {
 
     try {
       const user = await User.create(payload)
-      const token = await auth.use('api').generate(user, { expiresIn: '1days' })
-
-      return response.status(200).json({ token })
     } catch (e) {
-      return response.status(401).json({ error: 'Something gone wrong! Try again later.' })
+      return response.json({ error: 'Something gone wrong! Try again later.' })
     }
   }
 }

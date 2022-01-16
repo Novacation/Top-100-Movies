@@ -1,7 +1,9 @@
 {
-  "assets/app.js": "/assets/app.289e67be.js",
-  "assets/tailwind.css": "/assets/tailwind.64109fac.css",
-  "assets/tailwind.js": "/assets/tailwind.31d6cfe0.js",
-  "assets/header.css": "/assets/header.9ae13d10.css",
-  "assets/header.js": "/assets/header.31d6cfe0.js"
+  "assets/app.js": "http://localhost:55173/assets/app.js",
+  "assets/tailwind.css": "http://localhost:55173/assets/tailwind.css",
+  "assets/tailwind.js": "http://localhost:55173/assets/tailwind.js",
+  "assets/header.css": "http://localhost:55173/assets/header.css",
+  "assets/header.js": "http://localhost:55173/assets/header.js",
+  "assets/signin.js": "http://localhost:55173/assets/signin.js",
+  "assets/signup.js": "http://localhost:55173/assets/signup.js"
 }

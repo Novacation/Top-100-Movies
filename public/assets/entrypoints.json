@@ -2,23 +2,33 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/assets/app.289e67be.js"
+        "http://localhost:55173/assets/app.js"
       ]
     },
     "tailwind": {
       "css": [
-        "/assets/tailwind.64109fac.css"
+        "http://localhost:55173/assets/tailwind.css"
       ],
       "js": [
-        "/assets/tailwind.31d6cfe0.js"
+        "http://localhost:55173/assets/tailwind.js"
       ]
     },
     "header": {
       "css": [
-        "/assets/header.9ae13d10.css"
+        "http://localhost:55173/assets/header.css"
       ],
       "js": [
-        "/assets/header.31d6cfe0.js"
+        "http://localhost:55173/assets/header.js"
+      ]
+    },
+    "signin": {
+      "js": [
+        "http://localhost:55173/assets/signin.js"
+      ]
+    },
+    "signup": {
+      "js": [
+        "http://localhost:55173/assets/signup.js"
       ]
     }
   }

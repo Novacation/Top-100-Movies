@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/app.js') }}" />
+    @entryPointScripts('app')
+    @entryPointStyles('tailwind')
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <title>Top 100 movies</title>
   </head>
   <body>
     @include('partials/header')
     <main>
+    
     </main>
   </body>
 </html>
